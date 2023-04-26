@@ -9,9 +9,10 @@
 2. Right click over the folder, go down to services and click on the "New terminal at folder" option.
 3. Once you opened the terminal paste the following on it:
     ```
+    source env/bin/activate
     ./executable.sh
     ```
-4. If you get a permission denied error, execute this(you will only need to do this once):
+4. If you get a permission denied error, execute this and try again(you will only need to do this once):
     ```
     chmod +x executable.sh
     ```

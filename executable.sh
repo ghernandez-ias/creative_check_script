@@ -7,7 +7,6 @@
 #            source creative_env/bin/activate && export PATH=./creative_env/bin:$PATH && 
 #               export PYTHONPATH=./creative_env/lib/python3.8/site-packages:$PYTHONPATH && 
 #               python3 run.py\"" -e "end tell"
-source env/bin/activate
 #export PATH=./creative_env/bin:$PATH 
 #export PYTHONPATH=./creative_env/lib/python3.8/site-packages:$PYTHONPATH
 python3 run.py
