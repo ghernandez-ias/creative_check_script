@@ -19,7 +19,7 @@
     ```sh
     https://developers.facebook.com/tools/explorer/
     ```
-6. Enter your IDs comma or line break separated
+6. Enter your IDs comma or line break separated.
 7. To stop typing IDs double click the enter button.
 8. To check the responses, you will have a json file for every ID you entered in the path where you cloned the repo.
 9. In case you want to re-execute the script, repeat step 3.
