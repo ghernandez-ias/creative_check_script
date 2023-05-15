@@ -41,6 +41,7 @@ def execute_process():
     if inputs:
         logger.info('Processing ids...')
         for input in inputs:
+            #print(input)
             logger.info(f'Processing id: {input}')
 
             query_string = f"""SELECT EXT_MAPPING_ID FROM {os.getenv('snowflake_table')} WHERE EXT_CAMPAIGN_ID in ({input});"""
@@ -51,6 +52,7 @@ def execute_process():
                     try:
                         step_1 = requests.get(f'https://graph.facebook.com/v15.0/{id[0]}?fields=creative&access_token={token}')
                         tmp_json = step_1.json()
+
                         creative_id = tmp_json['creative']['id']
 
                         step_2 = requests.get(f'https://graph.facebook.com/v15.0/{creative_id}?fields=asset_feed_spec{{optimization_type}}&access_token={token}')
