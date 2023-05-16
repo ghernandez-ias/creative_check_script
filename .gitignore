@@ -4,4 +4,5 @@ cmp_ids.txt
 creative_ids.txt
 venv/
 *.env
+script_env/
 
