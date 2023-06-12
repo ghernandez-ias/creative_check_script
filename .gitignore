@@ -5,4 +5,12 @@ creative_ids.txt
 venv/
 *.env
 script_env/
+dco_campaigns.txt
+*.csv
+dco_ids.txt
+dof_ids.txt
+filtered_campaigns.txt
+pac_ids.txt
+*.tar
+dockerfile
 

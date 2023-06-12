@@ -7,6 +7,47 @@ from dotenv import set_key
 from facebook.facebook import *
 from snowflake_conn.snowflake import SnowflakeConn
 
+def get_user_credentials():
+    app_secret = os.getenv('fb_app_secret')
+    snow_usr = os.getenv('snowflake_user')
+
+    if not app_secret:
+        print('Please enter your facebook app secret without spaces to save it for further executions:')
+        app_secret = input()
+
+        set_key(".env", "fb_app_secret", app_secret)
+        os.environ["fb_app_secret"] = app_secret
+    else:
+        print('Actual fb app secret: ', app_secret)
+        print('Do you want to use a different app secret?: y/n')
+        desc = input()
+        if desc == 'y':
+            print('Please enter your facebook app secret without spaces to save it for further executions:')
+            app_secret = input()
+
+            set_key(".env", "fb_app_secret", app_secret)
+            os.environ["fb_app_secret"] = app_secret
+
+
+
+    if not snow_usr:
+        print('Please enter your snowflake user(okta email) without spaces to save it for further executions:')
+        snow_usr = input()
+
+        set_key(".env", "snowflake_user", snow_usr)
+        os.environ["snowflake_user"] = snow_usr
+    else:
+        print('Actual snowflake user: ', snow_usr)
+        print('Do you want to use a different snowflake user?: y/n')
+        desc = input()
+        if desc == 'y':
+            print('Please enter your snowflake user(okta email) without spaces to save it for further executions:')
+            snow_usr = input()
+
+            set_key(".env", "snowflake_user", snow_usr)
+            os.environ["snowflake_user"] = snow_usr
+
+
 def get_ids_user():
     logger = lg.logger(logging.DEBUG)
     inputs = []
@@ -65,6 +106,8 @@ def execute_process():
 
 if __name__ == "__main__":
     logger = lg.logger(logging.DEBUG)
+
+    get_user_credentials()
 
     is_valid = check_long_token()
     if is_valid:

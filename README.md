@@ -1,20 +1,35 @@
 ## Installation
-1. Clone the github repo
-2. Once you have the files you cloned from github, go to the .env file.
-3. On the empty fb_app_secret variable, paste your facebook app secret key without leaving spaces and without quotes.
-4. Finally, on the snowflake_user variable, paste you ias email without leaving spaces and without quotes.
-5. In case you don't see the .env file, go to finder and press at the same time Shift + Command + .
+1. Clone the github repo, preferably in your Downloads folder
+2. Download docker desktop from:
+    ```sh
+    https://www.docker.com 
+    ```
+    depending on your system.
+3. Download the image from
+    ```sh
+    https://drive.google.com/file/d/1At67kQ8Ns3zCRGGoyn9QlZuvJBRDnqyL/view?usp=sharing
+    ```
+4. Open a terminal
+5. Go to the downloads folder using(if you saved the image in Downloads):
+    ```sh
+    cd Downloads
+    ```    
+6. Execute the following in the same path where you saved the image:
+    ```sh
+    docker load -i creative_script_image.tar
+    ```  
 
 ## Execution
-1. On Finder, go to the folder you cloned from github.
-2. Go to dist folder, then go to run and look for the "run" file.
-3. Double click the run file and wait until it executes.
-4. In case the script asks for a token go to the Facebook api explorer, get a new one and paste it on the terminal
-    ```sh
-    https://developers.facebook.com/tools/explorer/
+1. On a terminal execute:
     ```
-5. Enter your IDs comma or line break separated.
-6. To stop typing IDs double click the enter button.
-7. To check the responses, you will have a json file for every ID you entered in the path where you cloned the repo.
-8. In case you want to re-execute the script, repeat step 3.
+    docker run -iv /Users/your_user/Downloads/creative_check_script:/app/ dockerfile
+    ``` 
+2. The script will ask you for your facebook app secret and snowflake user(okta email)
+3. If the script asks you for a token, please go to:
+    ``` 
+    https://developers.facebook.com/tools/explorer/
+    ``` 
+4. The json files with the responses will be saved on the folder of the github repo you cloned.
+5. If you want to re-execute the script, just repeat execution-step 1.
+
 
